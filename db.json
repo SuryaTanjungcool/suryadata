@@ -1,0 +1,47 @@
+{
+  "murids": [
+    {
+      "id": "ab27",
+      "namaMurid": "sdadf",
+      "Kelas": "X",
+      "Jurusan": "artis bokep",
+      "NISN": "12345678",
+      "AsalSekolah": "SMA 1 Jakarta",
+      "NamaMurid": "fdfd",
+      "kelas": "sdsd",
+      "jurusan": "sdsd",
+      "asal sekolah": "ssdd"
+    },
+    {
+      "id": "0c7e",
+      "namaMurid": "John Doe",
+      "Kelas": "X",
+      "Jurusan": "artis bokep",
+      "NISN": "12345678",
+      "AsalSekolah": "SMA 1 Jakarta"
+    }
+  ],
+  "gurus": [
+    {
+      "id": "1",
+      "namaguru": "John Doe",
+      "umur": "45",
+      "mengajarpelajaran": "IPA",
+      "pengalamanterakhir": "SMA 1 Jakarta"
+    },
+    {
+      "id": "1",
+      "namaguru": "John Doe",
+      "umur": "45",
+      "mengajarpelajaran": "IPA",
+      "pengalamanterakhir": "SMA 1 Jakarta"
+    },
+    {
+      "id": "a031",
+      "namaguru": "YGHJ",
+      "umur": "JHHJH",
+      "mengajarpelajaran": "AA",
+      "pengalamanterakhir": "AAA"
+    }
+  ]
+}
