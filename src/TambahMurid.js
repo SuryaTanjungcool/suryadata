@@ -106,7 +106,7 @@ export default function TambahMurid() {
         <TextField
           label="NISN"
           name="NISN"
-          value={formData.Nisn}
+          value={formData.NISN}
           onChange={handleChange}
           fullWidth
           required

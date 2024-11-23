@@ -19,6 +19,15 @@
       "Jurusan": "artis bokep",
       "NISN": "12345678",
       "AsalSekolah": "SMA 1 Jakarta"
+    },
+    {
+      "id": "f75e",
+      "namaMurid": "John Doe",
+      "Kelas": "X",
+      "Jurusan": "TKJ",
+      "Nisn": "",
+      "AsalSekolah": "SMA 1 Jakarta",
+      "NISN": "12345678"
     }
   ],
   "gurus": [
@@ -40,6 +49,27 @@
       "id": "a031",
       "namaguru": "YGHJ",
       "umur": "JHHJH",
+      "mengajarpelajaran": "AA",
+      "pengalamanterakhir": "AAA"
+    },
+    {
+      "id": "1",
+      "namaguru": "John Doe",
+      "umur": "45",
+      "mengajarpelajaran": "IPA",
+      "pengalamanterakhir": "SMA 1 Jakarta"
+    },
+    {
+      "id": "1",
+      "namaguru": "John Doe",
+      "umur": "45",
+      "mengajarpelajaran": "IPA",
+      "pengalamanterakhir": "SMA 1 Jakarta"
+    },
+    {
+      "id": "feae",
+      "namaguru": "pepek",
+      "umur": "999",
       "mengajarpelajaran": "AA",
       "pengalamanterakhir": "AAA"
     }

@@ -131,7 +131,7 @@ export default function Dashboard() {
             <Button
               variant="contained"
               size="large"
-              onClick={() => navigate("/tambah")}
+              onClick={() => navigate("/TambahMurid")}
               sx={{
                 background: "linear-gradient(90deg, #42a5f5, #64b5f6)", // Darker gradient for button
                 color: "#ffffff",
