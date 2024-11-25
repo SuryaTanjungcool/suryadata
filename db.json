@@ -1,98 +1,75 @@
 {
   "murids": [
     {
-      "id": "ab27",
-      "namaMurid": "sdadf",
+      "id": "2d81",
+      "namaMurid": "riski",
       "Kelas": "X",
-      "Jurusan": "artis bokep",
-      "NISN": "12345678",
-      "AsalSekolah": "SMA 1 Jakarta",
-      "NamaMurid": "fdfd",
-      "kelas": "sdsd",
-      "jurusan": "sdsd",
-      "asal sekolah": "ssdd"
-    },
-    {
-      "id": "0c7e",
-      "namaMurid": "John Doe",
-      "Kelas": "X",
-      "Jurusan": "artis bokep",
-      "NISN": "12345678",
-      "AsalSekolah": "SMA 1 Jakarta"
-    },
-    {
-      "id": "f75e",
-      "namaMurid": "John Doe",
-      "Kelas": "X",
-      "Jurusan": "TKJ",
+      "Jurusan": "es teh",
       "Nisn": "",
       "AsalSekolah": "SMA 1 Jakarta",
-      "NISN": "12345678"
+      "NISN": "2345321",
+      "NamaMurid": "yyggg",
+      "kelas": "x",
+      "jurusan": "aasasf",
+      "asal sekolah": "ftyuh"
     },
     {
-      "id": "1",
-      "namaguru": "John Doe",
-      "umur": "45",
-      "mengajarpelajaran": "IPA",
-      "pengalamanterakhir": "SMA 1 Jakarta"
+      "id": "cf33",
+      "namaMurid": "dani",
+      "Kelas": "X",
+      "Jurusan": "es teh",
+      "Nisn": "",
+      "AsalSekolah": "smp firdaus",
+      "NISN": "2345321"
+    },
+    {
+      "id": "asuu",
+      "namaMurid": "John Doe",
+      "Kelas": "XII",
+      "Jurusan": "IPA",
+      "Nisn": "",
+      "AsalSekolah": "gdgdsg",
+      "NISN": "12345678"
+      
     }
   ],
   "gurus": [
     {
-      "id": "1",
-      "namaguru": "John Doe",
-      "umur": "45",
-      "mengajarpelajaran": "IPA",
-      "pengalamanterakhir": "SMA 1 Jakarta"
-    },
-    {
-      "id": "1",
-      "namaguru": "John Doe",
-      "umur": "45",
-      "mengajarpelajaran": "IPA",
-      "pengalamanterakhir": "SMA 1 Jakarta"
-    },
-    {
-      "id": "a031",
-      "namaguru": "YGHJ",
-      "umur": "JHHJH",
-      "mengajarpelajaran": "AA",
-      "pengalamanterakhir": "AAA"
-    },
-    {
-      "id": "1",
-      "namaguru": "John Doe",
-      "umur": "45",
-      "mengajarpelajaran": "IPA",
-      "pengalamanterakhir": "SMA 1 Jakarta"
-    },
-    {
-      "id": "1",
-      "namaguru": "John Doe",
-      "umur": "45",
-      "mengajarpelajaran": "IPA",
-      "pengalamanterakhir": "SMA 1 Jakarta"
-    },
-    {
       "id": "feae",
-      "namaguru": "pepek",
+      "namaguru": "lucifer",
       "umur": "999",
       "mengajarpelajaran": "AA",
-      "pengalamanterakhir": "AAA"
+      "pengalamanterakhir": "AAA",
+      "mengajar pelajaran": "AAs",
+      "pengalaman terakhir": "AAAD"
     },
     {
-      "id": "1",
-      "namaguru": "John Doe",
-      "umur": "45",
-      "mengajarpelajaran": "IPA",
-      "pengalamanterakhir": "SMA 1 Jakarta"
+      "id": "992d",
+      "namaguru": "hadiar",
+      "umur": "999",
+      "mengajarpelajaran": "dosa manusia",
+      "pengalamanterakhir": "sma neraka 01"
     },
     {
-      "id": "1",
-      "namaguru": "John Doe",
-      "umur": "45",
-      "mengajarpelajaran": "IPA",
-      "pengalamanterakhir": "SMA 1 Jakarta"
+      "id": "c035",
+      "namaguru": "riski",
+      "umur": "666",
+      "mengajarpelajaran": "kebencian",
+      "pengalamanterakhir": "smk jujur kasian"
+    },
+    {
+      "id": "ae3e",
+      "namaguru": "athena",
+      "umur": "1001malam",
+      "mengajarpelajaran": "healing",
+      "pengalamanterakhir": "smk jujutsu kaisen 02 negri"
+    },
+    {
+      "id": "5d54",
+      "namaguru": "hadiar",
+      "umur": "999",
+      "mengajarpelajaran": "kebencian",
+      "pengalamanterakhir": "smk jujur kasian"
     }
   ]
 }

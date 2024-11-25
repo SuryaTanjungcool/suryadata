@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { TextField, Button, Box, Typography, Paper } from "@mui/material";
 import Swal from "sweetalert2";
 
-export default function Editguru() {
+export default function EditGuru() {
   const { id } = useParams(); // Get the ID from the URL
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -13,17 +13,21 @@ export default function Editguru() {
     mengajarpelajaran: "",
     pengalamanterakhir: "",
   });
+  const [loading, setLoading] = useState(true);
 
   // Fetch data to populate the form
   useEffect(() => {
     axios
       .get(`http://localhost:3030/gurus/${id}`)
       .then((response) => {
+        console.log(response.data); // Log the response to verify the data
         setFormData(response.data); // Populate the form with the current data
+        setLoading(false); // Data is loaded
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
         Swal.fire("Error", "Failed to load data.", "error");
+        setLoading(false); // Even if there's an error, stop loading
       });
   }, [id]);
 
@@ -45,8 +49,25 @@ export default function Editguru() {
   // Handle input change
   const handleChange = (event) => {
     const { name, value } = event.target;
+    console.log(name, value); // Log to see the changes happening
     setFormData({ ...formData, [name]: value });
   };
+
+  // Loading state, show spinner or placeholder until data is loaded
+  if (loading) {
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "100vh",
+        }}
+      >
+        <Typography variant="h6">Loading...</Typography>
+      </Box>
+    );
+  }
 
   return (
     <Box
@@ -84,7 +105,7 @@ export default function Editguru() {
             fullWidth
             margin="normal"
             label="Nama Guru"
-            name="namaguru"
+            name="namaguru" // Ensure it matches the formData field
             value={formData.namaguru}
             onChange={handleChange}
             required
@@ -92,8 +113,8 @@ export default function Editguru() {
           <TextField
             fullWidth
             margin="normal"
-            label="umur"
-            name="umur"
+            label="Umur"
+            name="umur" // Ensure it matches the formData field
             value={formData.umur}
             onChange={handleChange}
             required
@@ -101,8 +122,8 @@ export default function Editguru() {
           <TextField
             fullWidth
             margin="normal"
-            label="mengajar pelajaran"
-            name="mengajar pelajaran"
+            label="Mengajar Pelajaran"
+            name="mengajarpelajaran" // Ensure it matches the formData field
             value={formData.mengajarpelajaran}
             onChange={handleChange}
             required
@@ -110,8 +131,8 @@ export default function Editguru() {
           <TextField
             fullWidth
             margin="normal"
-            label="pengalaman terakhir"
-            name="pengalaman terakhir"
+            label="Pengalaman Terakhir"
+            name="pengalamanterakhir" // Ensure it matches the formData field
             value={formData.pengalamanterakhir}
             onChange={handleChange}
             required

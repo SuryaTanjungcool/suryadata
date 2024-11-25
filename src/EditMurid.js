@@ -20,7 +20,18 @@ export default function EditMurid() {
     axios
       .get(`http://localhost:3030/murids/${id}`)
       .then((response) => {
-        setFormData(response.data); // Populate the form with the current data
+        const data = response.data;
+
+        // Normalisasi data dari API
+        const normalizedData = {
+          namaMurid: data.namaMurid || data.NamaMurid || "",
+          Kelas: data.Kelas || data.kelas || "",
+          Jurusan: data.Jurusan || data.jurusan || "",
+          Nisn: data.Nisn || data.NISN || "",
+          AsalSekolah: data.AsalSekolah || data["asal sekolah"] || "",
+        };
+
+        setFormData(normalizedData);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -78,33 +89,33 @@ export default function EditMurid() {
             color: "#1976d2",
           }}
         >
-          edit data murid
+          Edit Data Murid
         </Typography>
         <form onSubmit={handleSubmit}>
           <TextField
             fullWidth
             margin="normal"
-            label="Nama murid"
-            name="NamaMurid"
-            value={formData.NamaMurid}
+            label="Nama Murid"
+            name="namaMurid"
+            value={formData.namaMurid}
             onChange={handleChange}
             required
           />
           <TextField
             fullWidth
             margin="normal"
-            label="kelas"
-            name="kelas"
-            value={formData.kelas}
+            label="Kelas"
+            name="Kelas"
+            value={formData.Kelas}
             onChange={handleChange}
             required
           />
           <TextField
             fullWidth
             margin="normal"
-            label="jurusan"
-            name="jurusan"
-            value={formData.jurusan}
+            label="Jurusan"
+            name="Jurusan"
+            value={formData.Jurusan}
             onChange={handleChange}
             required
           />
@@ -112,17 +123,17 @@ export default function EditMurid() {
             fullWidth
             margin="normal"
             label="NISN"
-            name="NISN"
-            value={formData.NISN}
+            name="Nisn"
+            value={formData.Nisn}
             onChange={handleChange}
             required
           />
           <TextField
             fullWidth
             margin="normal"
-            label="asal sekolah"
-            name="asal sekolah"
-            value={formData.asalsekolah}
+            label="Asal Sekolah"
+            name="AsalSekolah"
+            value={formData.AsalSekolah}
             onChange={handleChange}
             required
           />

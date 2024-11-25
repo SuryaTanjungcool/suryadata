@@ -14,8 +14,9 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import SearchIcon from "@mui/icons-material/Search"; // Importing Search Icon
 import Swal from "sweetalert2";
-import { Box, Button, Typography, IconButton, Tooltip, Grid } from "@mui/material";
+import { Box, Button, Typography, IconButton, Tooltip, Grid, TextField, InputAdornment } from "@mui/material";
 
 // Custom styles for table cells
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -49,6 +50,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 export default function Dashboard() {
   const [gurus, setGurus] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -87,6 +89,11 @@ export default function Dashboard() {
     });
   };
 
+  // Filter gurus based on the search query
+  const filteredGurus = gurus.filter((guru) =>
+    guru.namaguru.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <>
       <Navbar />
@@ -107,9 +114,10 @@ export default function Dashboard() {
                 background: "linear-gradient(90deg, #1e88e5, #42a5f5)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
+                textAlign: { xs: "center", sm: "left" }, // Center for small screens, left for larger
               }}
             >
-              📋 Daftar Guru
+              📃Daftar Guru📃
             </Typography>
           </Grid>
           <Grid item xs={12} md={4} display="flex" justifyContent="flex-end">
@@ -133,12 +141,33 @@ export default function Dashboard() {
           </Grid>
         </Grid>
 
+        {/* Search Input with Search Icon */}
+        <Box sx={{ marginTop: 3, textAlign: "center" }}>
+          <TextField
+            variant="outlined"
+            fullWidth
+            label="Search by Name"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            sx={{ maxWidth: "500px", margin: "auto" }}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            }}
+          />
+        </Box>
+
+        {/* Table for displaying filtered data */}
         <TableContainer
           component={Paper}
           sx={{
             marginTop: "24px",
             boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
             borderRadius: "12px",
+            overflowX: "auto", // Allow horizontal scrolling on smaller screens
           }}
         >
           <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -153,7 +182,7 @@ export default function Dashboard() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {gurus.map((guru, index) => (
+              {filteredGurus.map((guru, index) => (
                 <StyledTableRow key={guru.id}>
                   <StyledTableCell>{index + 1}</StyledTableCell>
                   <StyledTableCell align="center">{guru.namaguru}</StyledTableCell>

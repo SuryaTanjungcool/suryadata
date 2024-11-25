@@ -15,7 +15,8 @@ import EditIcon from "@mui/icons-material/Edit";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import Swal from "sweetalert2";
-import { Box, Button, Typography, IconButton, Tooltip, Grid } from "@mui/material";
+import { Box, Button, Typography, IconButton, Tooltip, Grid, TextField, InputAdornment } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search"; // Importing SearchIcon
 
 // Custom styles for table cells
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -49,6 +50,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 export default function Dashboard() {
   const [murids, setMurids] = useState([]);
+  const [searchQuery, setSearchQuery] = useState(""); // Declare searchQuery state
   const navigate = useNavigate();
 
   // Fetch data from the server
@@ -69,6 +71,11 @@ export default function Dashboard() {
         console.error("Error fetching data:", error);
       });
   }, []);
+
+  // Filtered murids based on search query
+  const filteredMurids = murids.filter((murid) =>
+    murid.namaMurid.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   // Delete murid by ID
   const deleteMurid = (id) => {
@@ -148,6 +155,25 @@ export default function Dashboard() {
           </Grid>
         </Grid>
 
+        {/* Search Input with Search Icon */}
+        <Box sx={{ marginTop: 3, textAlign: "center" }}>
+          <TextField
+            variant="outlined"
+            fullWidth
+            label="Search by Name"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            sx={{ maxWidth: "500px", margin: "auto" }}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            }}
+          />
+        </Box>
+
         {/* Table Section */}
         <TableContainer
           component={Paper}
@@ -165,14 +191,13 @@ export default function Dashboard() {
                 <StyledTableCell align="center">Nama Murid</StyledTableCell>
                 <StyledTableCell align="center">Kelas</StyledTableCell>
                 <StyledTableCell align="center">Jurusan</StyledTableCell>
-                <StyledTableCell align="center">NISN</StyledTableCell>
+                <StyledTableCell align="center">Nisn</StyledTableCell>
                 <StyledTableCell align="center">ASAL Sekolah</StyledTableCell>
                 <StyledTableCell align="center">Actions</StyledTableCell>
-              
               </TableRow>
             </TableHead>
             <TableBody>
-              {murids.map((murid, index) => (
+              {filteredMurids.map((murid, index) => (
                 <StyledTableRow key={murid.id}>
                   <StyledTableCell component="th" scope="row">
                     {index + 1}
@@ -180,7 +205,7 @@ export default function Dashboard() {
                   <StyledTableCell align="center">{murid.namaMurid}</StyledTableCell>
                   <StyledTableCell align="center">{murid.Kelas}</StyledTableCell>
                   <StyledTableCell align="center">{murid.Jurusan}</StyledTableCell>
-                  <StyledTableCell align="center">{murid.NISN}</StyledTableCell>
+                  <StyledTableCell align="center">{murid.Nisn}</StyledTableCell>
                   <StyledTableCell align="center">{murid.AsalSekolah}</StyledTableCell>
                   <StyledTableCell align="center">
                     <Tooltip title="Edit">
@@ -198,14 +223,7 @@ export default function Dashboard() {
                       >
                         <DeleteIcon />
                       </IconButton>
-                    </Tooltip>
-                    <Tooltip title="View Details">
-                      <IconButton
-                        onClick={() => navigate(`/view/${murid.id}`)}
-                        sx={{ color: "#1976d2" }} // Slightly darker blue for view action
-                      >
-                        <VisibilityIcon />
-                      </IconButton>
+                   
                     </Tooltip>
                   </StyledTableCell>
                 </StyledTableRow>
