@@ -28,6 +28,13 @@
       "Nisn": "",
       "AsalSekolah": "SMA 1 Jakarta",
       "NISN": "12345678"
+    },
+    {
+      "id": "1",
+      "namaguru": "John Doe",
+      "umur": "45",
+      "mengajarpelajaran": "IPA",
+      "pengalamanterakhir": "SMA 1 Jakarta"
     }
   ],
   "gurus": [
@@ -72,6 +79,20 @@
       "umur": "999",
       "mengajarpelajaran": "AA",
       "pengalamanterakhir": "AAA"
+    },
+    {
+      "id": "1",
+      "namaguru": "John Doe",
+      "umur": "45",
+      "mengajarpelajaran": "IPA",
+      "pengalamanterakhir": "SMA 1 Jakarta"
+    },
+    {
+      "id": "1",
+      "namaguru": "John Doe",
+      "umur": "45",
+      "mengajarpelajaran": "IPA",
+      "pengalamanterakhir": "SMA 1 Jakarta"
     }
   ]
 }
